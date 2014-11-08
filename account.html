@@ -1,35 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
     </head>
 	<body>
 	
-	    <div id="header">
-	        <table class="plc">
-                <tr>
-                    <td id="logo">Turnt</td>
-                    <td class="links">
-                        <div class="section">
-                            <a>PT1</a>
-                        </div>
-                        <div class="section">
-                		    <a>PT2</a>
-                        </div>
-                        <div class="section">
-                            <a>PT3</a>  
-                        </div>
-                        
-                    </td>
-                    
-                   
-                </tr>
-                
-            </table>
-            <div id="register"><a>Account</a></div>
-	    </div>
+	    
 		
 		<div class="account">
 			<div id="username"></div>
@@ -53,7 +31,7 @@
         var currentUser = Parse.User.current();
 		document.getElementById("username").innerHTML = "Username: " + currentUser.getUsername();
 		document.getElementById("email").innerHTML = "Email: " + currentUser.getEmail();
-		listFriends()
+		listFriends();
 		
 		function listFriends(){
 			document.getElementById("friendList").innerHTML = 'friend A </br> friend B </br>';
@@ -77,8 +55,9 @@
 					if (results.length > 0){
 						for (var i = 0; i < results.length; i++) { 
 							var object = results[i];
-							username = object.get('username')
-							document.getElementById("results").innerHTML = (username + '<a class="inp" onClick="addFriend(\'' + username + '\')">Add</a>');		
+							username = object.get('username');
+							//id = object.get('objectId');
+							document.getElementById("results").innerHTML = username + '<a class="inp" onClick="addFriend(\'' + username + '\')">Add</a>';	
 						}
 					}
 					else{
@@ -94,14 +73,26 @@
 			}
 		}
 		
-		function addFriend(username){
+		function addFriend(friend){
 			var user = Parse.User.current();
-			var relation = user.relation("Friends");
-			alert('added ' + username);
+			var friends = user.get('FriendUsers');
+			if (! friends){
+				friends = [friend];
+			}
+			else {
+				friends.push(friend);
+			}
+			user.save(null, {
+				success: function(user) {
+				user.set("FriendUsers", friends);
+				user.save();
+				}
+			});
+			//alert('added ' + friend.get('username'));
 		}
 		
-		function removeFriend(username){
-			alert('removed ' + username);
+		function removeFriend(user){
+			alert('removed ' + user.getUsername());
 		}
 		
     </script>
