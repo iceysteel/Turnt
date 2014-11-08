@@ -62,21 +62,14 @@
     <script type="text/javascript">
         Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
         
-        var TestObject = Parse.Object.extend("TestObject");
-        var testObject = new TestObject();
-        testObject.save({foo: "bar"}).then(function(object) {
-            alert("yay! it worked");
-        });
-        
-        var TestObject = Parse.Object.extend("TestObject");
-        var testObject = new TestObject();
-          testObject.save({foo: "bar"}, {
-          success: function(object) {
-            $(".success").show();
-          },
-          error: function(model, error) {
-            $(".error").show();
-          }
-        });
+        var currentUser = Parse.User.current();
+        if (currentUser) 
+        {
+            
+        } 
+        else 
+        {
+            window.location = "login.html";
+        }
     </script>
 </html>
