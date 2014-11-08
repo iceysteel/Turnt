@@ -87,6 +87,7 @@ input, select
     border: none;
     border-left: 5px solid #3d566e;
     transition: border-color 0.5s;
+	color:white;
 }
 input:hover, input:active, select:hover, select:active
 {
