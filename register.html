@@ -31,12 +31,15 @@
 
 	    </div>
             <div class="create loginpane">
-                <h1>Login</h1>
+                <h1>Register</h1>
                 <div class="inp">
-                    Username: <input type="text"><br>
+                    Email: <input id="email" type="email"><br>
                 </div>
                 <div class="inp">
-                    Password: <input type="password"><br>
+                    Username: <input id="uname" type="text"><br>
+                </div>
+                <div class="inp">
+                    Password: <input id="password" type="password"><br>
                 </div>
                 <table>
                     <tr>
@@ -53,12 +56,19 @@
     <script type="text/javascript">
         Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
         var user = new Parse.User();
-        Parse.User.logIn("myname", "mypass", {
+        user.set("username", document.getElementById('uname').value);
+        user.set("password", document.getElementById('password').value);
+        user.set("email", document.getElementById('email').value);
+         
+        // other fields can be set just like with Parse.Object
+         
+        user.signUp(null, {
           success: function(user) {
             window.location = "home.html";
           },
           error: function(user, error) {
-            // The login failed. Check error to see why.
+            // Show the error message somewhere and let the user try again.
+            alert("Error: " + error.code + " " + error.message);
           }
         });
     </script>
