@@ -52,10 +52,13 @@
                     <option value="November">November</option>
                     <option value="December">December</option>
                 </select><br>
-                Day: <input type="number" id="da" min="1" max="31">
+                Day: <input type="number" id="da" min="1" max="31" onkeypress="return isNumberKey(event)">
             </div>
             <div class="inp">
-                Cost: $<input id="co" type="number" min="1"><br>
+                Cost: $<input id="co" type="number" min="1" onkeypress="return isNumberKey(event)"><br>
+            </div>
+			<div class="inp">
+                Description: <input id="description" type="text"><br>
             </div>
             <a class="inp" onclick="newEvent()">Submit</a>
             
@@ -66,22 +69,15 @@
         {
             var Event = Parse.Object.extend("Parties");
             var party = new Event();
-            var user = Parse.User.current();
-            user.fetch().then(function(fetchedUser){
-                var name = fetchedUser.getUsername();
-            }, function(error){
-                //Handle the error
-            });
-			if (Number(document.getElementById('co').value) < 1){
-				alert("Cost can't be negative");
-			}
-			else{
+            var user = Parse.User.current()
+			var name = user.getUsername();
+			party.set("Owner", name);
             party.set("Location", document.getElementById('loc').value);
             party.set("Year", Number(document.getElementById('yr').value));
             party.set("Month", document.getElementById('mo').value);
             party.set("Day", Number(document.getElementById('da').value));
             party.set("Cost",  Number(document.getElementById('co').value));
-            party.set("Owner", name);
+			party.set("Description", document.getElementById('description').value);
             party.save(null, {
               success: function(party) {
                 // Execute any logic that should take place after the object is saved.
@@ -93,7 +89,6 @@
                 alert('Failed to create new object, with error code: ' + error.message);
               }
             });
-			}
         }
         Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
         var currentUser = Parse.User.current();
@@ -105,5 +100,10 @@
         {
             window.location = "login.html";
         }
+		
+		function isNumberKey(evt)
+        {
+          return (event.charCode >= 48 && event.charCode <= 57);
+		}	
     </script>
 </html>
