@@ -72,10 +72,6 @@
             }, function(error){
                 //Handle the error
             });
-			if (Number(document.getElementById('co').value) < 1){
-				alert("Cost can't be negative");
-			}
-			else{
             party.set("Location", document.getElementById('loc').value);
             party.set("Year", Number(document.getElementById('yr').value));
             party.set("Month", document.getElementById('mo').value);
@@ -93,7 +89,6 @@
                 alert('Failed to create new object, with error code: ' + error.message);
               }
             });
-			}
         }
         Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
         var currentUser = Parse.User.current();
