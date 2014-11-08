@@ -33,10 +33,10 @@
             <div class="create loginpane">
                 <h1>Login</h1>
                 <div class="inp">
-                    Username: <input type="text"><br>
+                    Username: <input id="uname" type="text"><br>
                 </div>
                 <div class="inp">
-                    Password: <input type="password"><br>
+                    Password: <input id="password" type="password"><br>
                 </div>
                 <table>
                     <tr>
@@ -44,23 +44,26 @@
                             <a class="inp" href="register.html">Register</a>
                         </td>
                         <td>
-                            <a class="inp">Sign In</a>
+                            <a class="inp" onclick="SignIn()">Sign In</a>
                         </td>
                     </tr>
                 </table>
             </div>
 	</body>
     <script type="text/javascript">
-        Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
-        var user = new Parse.User();
-        Parse.User.logIn("myname", "mypass", {
-          success: function(user) {
-            window.location = "home.html";
-          },
-          error: function(user, error) {
-            // The login failed. Check error to see why.
-          }
-        });
+        function SignIn()
+        {
+            Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
+            var user = new Parse.User();
+            Parse.User.logIn(document.getElementById('uname').value, document.getElementById('password').value, {
+              success: function(user) {
+                window.location = "home.html";
+              },
+              error: function(user, error) {
+                alert("Error: " + error.code + " " + error.message);
+              }
+            });
+        }
     </script>
 
 </html>
