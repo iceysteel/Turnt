@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
 	<body>
 		<div id="header">
 		    <div class="section">
-		        <a>PT1
-		        </a>
+		        <a>PT1</a>
 		    </div>
 		    <div class="section">
     		    <a>PT2</a>
