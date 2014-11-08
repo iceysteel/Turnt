@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-ng-app="app">
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-        <script src="/script/angular.min.js"></script>
-        <script src="/script/angular-route.min.js"></script>
         <script src="/script/app.js"></script>
     </head>
 	<body>
@@ -21,9 +19,6 @@
                         <div class="section">
                 		    <a href="#parties">Parties</a>
                         </div>
-                        <div class="#section">
-                            <a href="#account">account</a>
-                        </div>
                     </td>
                 </tr>
             </table>
@@ -36,7 +31,7 @@
 
         <!-- don't edit the shit in this div -->
         <div>
-            <ng-vew></ng-vew>
+            <ng-view></ng-view>
         </div>
 	</body>
 </html>
