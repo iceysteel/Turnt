@@ -1,12 +1,68 @@
-.header
+#header
 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-height: 148px;
     width: 100%;
-    height: 15%;
-    background-color: red;
+    min-height: 78px;
+    background-color: #2ecc71;
+    overflow: hidden;
+    float: left;
+    
+}
+#logo
+{
+    font-size: 32pt;
+    padding-left: 28px;
+    padding-right: 20px;
+    color: white;
+}
+.links
+{
+    display: block; 
 }
 .section
 {
-    width: 20%;
-    height: 15%;
-    background-color: blue;
+    display: inline-block;
+    width: 100px;
+    margin-top: 7px;
+    margin-right: 18px;
+    padding-top: 10px;
+    height: 48px;
+    font-size: 18pt;
+    text-align: center;
+    background-color: #27ae60;
+    color: white;
+    transition: all 0.5s;
+    border-radius: 10px;
+   
+}
+
+.section:hover
+{
+    background-color: #2cc36b;
+}
+#register
+{
+    float: right;
+    margin-top: -60px;
+    height: 48px;
+    background-color: #27ae60;
+    width: 100px;
+    padding-top: 10px;
+    font-size: 18pt;
+    text-align: center;
+    color: white;
+    transition: all 0.5s;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+#register:hover
+{
+    background-color: #2cc36b;
+}
+body
+{
+    font-family: Noto Sans UI, Open Sans, sans-serif;
 }
