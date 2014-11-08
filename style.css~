@@ -11,7 +11,7 @@
 {
     display: block;
     width: 20%;
-    height: 15%;
+    height: 100%;
     background-color: blue;
 }
 body
