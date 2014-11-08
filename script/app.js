@@ -2,7 +2,7 @@
  * Created by MuhammadRizky on 11/8/2014.
  */
 
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute','app.account','app.host','app.parties'])
 /**
  * config
  */
@@ -11,6 +11,14 @@ angular.module('app', ['ngRoute'])
             .when('/', {
                 templateUrl: 'partials/home.html',
                 controller: 'homeController'
+            })
+            .when('/login',{
+                templateUrl:'partials/login.html',
+                controller:'loginController'
+            })
+            .when('/register',{
+                templateUrl:'partials/register.html',
+                controller:'registerController'
             })
     }])
 
