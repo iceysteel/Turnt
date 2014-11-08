@@ -57,6 +57,9 @@
             <div class="inp">
                 Cost: $<input id="co" type="number" min="1" onkeypress="return isNumberKey(event)"><br>
             </div>
+			<div class="inp">
+                Description: <input id="description" type="text"><br>
+            </div>
             <a class="inp" onclick="newEvent()">Submit</a>
             
 	    </div>
@@ -68,12 +71,13 @@
             var party = new Event();
             var user = Parse.User.current()
 			var name = user.getUsername();
+			party.set("Owner", name);
             party.set("Location", document.getElementById('loc').value);
             party.set("Year", Number(document.getElementById('yr').value));
             party.set("Month", document.getElementById('mo').value);
             party.set("Day", Number(document.getElementById('da').value));
             party.set("Cost",  Number(document.getElementById('co').value));
-            party.set("Owner", name);
+			party.set("Description", document.getElementById('description').value);
             party.save(null, {
               success: function(party) {
                 // Execute any logic that should take place after the object is saved.
