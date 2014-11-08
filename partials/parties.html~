@@ -1,0 +1,9 @@
+<div ng-controller="" id="parties">
+    
+    <div id="pane">
+        
+    </div>
+    
+    <script type="text/javascript">
+    </script>
+</div>
