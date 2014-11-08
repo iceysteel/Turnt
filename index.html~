@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<body>
-		<a>GENTOO</a>
+		<div id="header">
+		    <div class="section">PT1</div>
+		    <div class="section">PT2</div>
+		    <div class="section">PT3</div>
+		</div>
 	</body>
 </html>

@@ -1,6 +1,12 @@
-header
+.header
 {
     width: 100%;
     height: 15%;
     background-color: red;
+}
+.section
+{
+    width: 20%;
+    height: 15%;
+    background-color: blue;
 }
