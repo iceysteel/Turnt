@@ -28,9 +28,9 @@ angular.module('app', ['ngRoute'])
                 templateUrl: 'partials/account.html',
                 controller: 'accountController'
             })
-            .when('/parties', {
-                templateUrl: 'partials/parties.html',
-                controller: 'partyController'
+            .when('/partyList', {
+                templateUrl: 'partials/partyList.html',
+                controller: 'partyListController'
             })
             .otherwise({redirectTo: '/'})
     }])
@@ -48,10 +48,20 @@ angular.module('app', ['ngRoute'])
     .factory('accountFactory', ['$http', function ($http) {
 
     }])
-    .factory('partyFactory', ['$http', function ($http) {
+    .factory('partyListFactory', ['$http', function ($http) {
+        // call parse and look for the invited parties -R
 
+        // return an array of parties object -R
+    }])
+    .factory('partyDetailFactory', ['$http', function ($http) {
+        // call parse and look for the specific parties -R
+
+        // return the party object
     }])
     .factory('loginFactory', ['$http', function ($http) {
+
+    }])
+    .factory('registerFactory', ['$http', function ($http) {
 
     }])
 
@@ -59,7 +69,11 @@ angular.module('app', ['ngRoute'])
  * controllers
  */
     .controller('homeController', ['$scope', 'homeFactory', function ($scope, homeFactory) {
+
+    }])
+    .controller('hostController', ['$scope', 'hostFactory', function ($scope, hostFactory) {
         Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
+
         var currentUser = Parse.User.current();
         if (currentUser) {
 
@@ -97,16 +111,17 @@ angular.module('app', ['ngRoute'])
             });
         }
     }])
-    .controller('hostController', ['$scope', 'hostFactory', function ($scope, hostFactory) {
-
-    }])
     .controller('accountController', ['$scope', 'accountFactory', function ($scope, accountFactory) {
 
     }])
-    .controller('partyController', ['$scope', 'partyFactory', function ($scope, partyFactory) {
+    .controller('partyListController', ['$scope', 'partyListFactory', function ($scope, partyListFactory) {
         $scope.parties = [];
 
+        $scope.getPatyList = function () {
+            // call the factory and get the party list -R
 
+            // show the party list using ng repeat -R
+        }
     }])
     .controller('loginController', ['$scope', 'loginFactory', '$location', function ($scope, loginFactory, $location) {
         $scope.signIn = function () {
@@ -131,7 +146,6 @@ angular.module('app', ['ngRoute'])
             user.set("email", scope.email);
 
             // other fields can be set just like with Parse.Object
-
             user.signUp(null, {
                 success: function (user) {
                     $location.path('/home')
