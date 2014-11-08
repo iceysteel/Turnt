@@ -4,16 +4,64 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 	<body>
-		<div id="header">
-		    <div class="section">
-		        <a>PT1</a>
-		    </div>
-		    <div class="section">
-    		    <a>PT2</a>
-		    </div>
-		    <div class="section">
-		        <a>PT3</a>  
-		    </div>
-		</div>
+	
+	    <div id="header">
+	        <table class="plc">
+                <tr>
+                    <td id="logo">Turnt</td>
+                    <td class="links">
+                        <div class="section">
+                            <a>PT1</a>
+                        </div>
+                        <div class="section">
+                		    <a>PT2</a>
+                        </div>
+                        <div class="section">
+                            <a>PT3</a>  
+                        </div>
+                        
+                    </td>
+                    
+                   
+                </tr>
+                
+            </table>
+             
+	    <div id="register">Sign Up </div>
+	    </div>
+	    <a>totype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+ComponentRegistrarInterposition.methods.unregisterFactory@resource://gre/modules/RemoteAddonsParent.jsm:270:5
+AddonInterpositionService.prototype.interpose/desc.value@resource://gre/components/multiprocessShims.js:133:52
+exports.onUnload@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///home/swag/.mozilla/firefox/8rmieuwv.Swag/extensions/jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack.xpi!/bootstrap.js -> resource://gre/modules/commonjs/toolkit/loader.js -> resource://jid1-oonoa6xbjznvlq-at-jetpack/gnotifier/lib/main.js:336:1
+unload/<@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///home/swag/.mozilla/firefox/8rmieuwv.Swag/extensions/jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack.xpi!/bootstrap.js -> resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/system/unload.js:58:7
+unload@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///home/swag/.mozilla/firefox/8rmieuwv.Swag/extensions/jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack.xpi!/bootstrap.js -> resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/system/unload.js:56:3
+onunload@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///home/swag/.mozilla/firefox/8rmieuwv.Swag/extensions/jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack.xpi!/bootstrap.js -> resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/system/unload.js:77:5
+</a>
 	</body>
 </html>
