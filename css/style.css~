@@ -150,3 +150,12 @@ body
 {
     float: left;
 }
+.ng-scope
+{
+    margin-top: 25px;
+}
+.oup
+{
+    display: block;
+    margin-bottom: 50px;
+}
