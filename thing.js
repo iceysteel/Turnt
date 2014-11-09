@@ -24,7 +24,6 @@ function signIn()
             var user = new Parse.User();
             Parse.User.logIn(document.getElementById('uname').value, document.getElementById('password').value, {
               success: function(user) {
-                window.location = ""; //go to p;a
               },
               error: function(user, error) {
                 alert("Error: " + error.code + " " + error.message);
