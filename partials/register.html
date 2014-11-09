@@ -3,18 +3,18 @@
     <h1>Register</h1>
 
     <div class="inp">
-        Email: <input id="email" type="email" data-ng-model="email"><br>
+        Email: <input id="userEmail" type="email" data-ng-model="userEmail"><br> {{userEmail}}
     </div>
     <div class="inp">
-        Username: <input id="uname" type="text" data-ng-model="uname"><br>
+        Username: <input id="userName" type="text" data-ng-model="userName"><br> {{userName}}
     </div>
     <div class="inp">
-        Password: <input id="password" type="password" data-ng-model="password"><br>
+        Password: <input id="userPass" type="password" data-ng-model="userPass"><br> {{userPass}}
     </div>
     <table>
         <tr>
             <td>
-                <a class="inp" onclick="Register()">Register</a>
+                <a class="inp" type="button" ng-click="userRegister">Register</a>
             </td>
         </tr>
     </table>
