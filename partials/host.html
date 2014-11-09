@@ -1,5 +1,32 @@
-<div ng-controller="" id="host">
-    <h1>
-        THIS IS THE HOST PAGE
-    </h1>
+<div ng-controller="hostController" id="host">
+    <div class="create">
+        <div class="inp">
+            Location: <input id="loc" type="text" data-ng-model="loc"><br>
+        </div>
+        <div class="inp">
+            Year: <select id="yr" data-ng-model="yr">
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+        </select>
+            Month: <select id="mo" data-ng-model="mo">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select><br>
+            Day: <input type="number" id="day" data-ng-model="day">
+        </div>
+        <div class="inp">
+            Cost: $<input id="co" type="number" data-ng-model="co"><br>
+        </div>
+        <a class="inp" ng-click="hostEvent">Submit</a>
+    </div>
+
 </div>
