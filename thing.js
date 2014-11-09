@@ -1,6 +1,7 @@
+Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
+
 function Register()
         {
-            Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
             var user = new Parse.User();
             user.set("username", document.getElementById('uname').value);
             user.set("password", document.getElementById('password').value);

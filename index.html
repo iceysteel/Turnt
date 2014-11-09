@@ -24,10 +24,9 @@
                 </tr>
             </table>
              
-	    <div id="register">
-            <a href="#login">Sign In</a>
-        </div>
-	    </div>
+		<div id="register">
+		</div>
+			</div>
 	        <a>Put informative shit here.</a>
 
         <!-- don't edit the shit in this div -->
@@ -37,5 +36,15 @@
 		
 		<script type="text/javascript" src="thing.js"></script>
 		
+		<script type="text/javascript">
+		Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
+		var currentUser = Parse.User.current();
+		if (currentUser) {
+			document.getElementById("register").innerHTML = '<a href="#account">Account</a>';
+		}
+		else {
+			document.getElementById("register").innerHTML = '<a href="#login">Sign In</a>';
+		}
+		</script>
 	</body>
 </html>
