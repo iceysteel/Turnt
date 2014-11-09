@@ -1,0 +1,14 @@
+<div ng-controller="partyListController" id="parties">
+    <div class="create loginpane">
+        <h1>Login</h1>
+        <button ng-click="getData">Party Data</button>
+
+        <div id="partyData" data-ng-model="partydata"> </div>
+    </div>
+    
+    <div id="partypane">
+    ayy lmao
+    </div>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
+    <script type="text/javascript" src="../pagelist.js"></script>
+</div>
