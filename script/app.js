@@ -246,8 +246,6 @@ angular.module('app', ['ngRoute'])
     .controller('partyDetailsController', ['$scope', 'partyDetailsFactory', function ($scope, partyDetailsFactory) {
         $scope.party = tempVar;
 
-        console.log($scope.party);
-
         $scope.pledge = function () {
 
         }

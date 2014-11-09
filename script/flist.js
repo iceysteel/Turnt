@@ -13,7 +13,6 @@ friendlist.forEach(function(userid)
         
             objs.forEach(function(results) 
             {
-                
                 document.getElementById('fs').innerHTML += results.get('username') + "<br>";
             });
         },
