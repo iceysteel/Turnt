@@ -14,7 +14,7 @@ query.find({
         var htmlst = "<div class=\"ovblock\">";
         results.forEach(function(entry)
         {
-            htmlst += "<div class = 'block'><img src=/partyhat.gif class=\"ptyhat\"><div class = 'owner'>Host: "+entry.get('Owner')+"</div>";
+            htmlst += "<div class = 'block'><div class = 'owner'>Host: "+entry.get('Owner')+"</div>";
             htmlst += "<div class = 'date'>Date: " + entry.get('Month') + " " + entry.get('Day') + " ," + entry.get('Year') + "</div>";
             htmlst += "<div class = 'location'> Location: " + entry.get('Location') + "</div></div>";
         });
