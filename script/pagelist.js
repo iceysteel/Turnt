@@ -17,7 +17,7 @@ query.find({
             htmlst += "<div class = block><div class = 'owner'>"+entry.get('Owner')+"</div>";
             htmlst += "<div class = 'date'>" + entry.get('Month') + " " + entry.get('Day') + " ," + entry.get('Year') + "</div></div>";
         });
-        document.getElementById('mypane').innerHTML = htmlst;
+        //document.getElementById('mypane').innerHTML = htmlst;
     },
     error: function(error)
     {

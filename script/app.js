@@ -173,33 +173,30 @@ angular.module('app', ['ngRoute'])
     .controller('partyListController', ['$scope', 'partyListFactory', function ($scope, partyListFactory) {
         $scope.parties = [];
 
-        $scope.getPatyList = function () {
-            // call the factory and get the party list -R
+        Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
+        var currentUser = Parse.User.current();
+        var username = currentUser.getUsername();
+        var Event = Parse.Object.extend("Parties");
+        var query = new Parse.Query(Event);
+        query.equalTo('Owner', username);
+        query.find({
+            success: function(results)
+            {
+                angular.copy(results, $scope.parties);
+            },
+            error: function(error)
+            {
 
-            // show the party list using ng repeat -R
-
-            // temporary code
-            Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
-            var pty = Parse.Object.extend("Parties");
-            var query = new Parse.Query(pty);
-            query.get("rlF4ESEDL7", {
-                success: function(pty) {
-                    alert(pty);
-                    $scope.partyData=pty.get("Cost");
-                },
-                error: function(pty, error) {
-                    alert("ERROR");
-                }
-            });
-        };
+            }
+        });
     }])
-    .controller('loginController', ['$scope', 'loginFactory', '$location', function ($scope, loginFactory, $location) {
+    .controller('loginController', ['$scope', 'loginFactory', '$location', '$routeParams', function ($scope, loginFactory, $location, $routeParams) {
         $scope.signIn = function () {
             Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
             var user = new Parse.User();
             Parse.User.logIn($scope.uname, $scope.password, {
                 success: function (user) {
-                    $location.path('/partyList');
+                    $location.url('/partyList');
                 },
                 error: function (user, error) {
                     alert("Error: " + error.code + " " + error.message);
@@ -207,8 +204,8 @@ angular.module('app', ['ngRoute'])
             });
         };
     }])
-    .controller('registerController', ['$scope', 'registerFactory', '$location', function ($scope, registerFactory, $location) {
-        $scope.userRegister = function () {
+    .controller('registerController', ['$scope', 'registerFactory', '$location', '$routeParams', function ($scope, registerFactory, $location, $routeParams) {
+        $scope.register = function () {
             Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
             var user = new Parse.User();
             user.set("username", $scope.userName);
@@ -217,7 +214,8 @@ angular.module('app', ['ngRoute'])
 
             user.signUp(null, {
                 success: function (user) {
-                    $location.path('/partyList')
+                    alert("Successful!");
+                    $location.url('/partyList');
                 },
                 error: function (user, error) {
                     alert("Error: " + error.code + " " + error.message);
