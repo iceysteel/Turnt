@@ -1,55 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" data-ng-app="app">
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
-        <script src="script/app.js"></script>
-        
-        <script src="/script/pagelist.js"></script>
-    </head>
-	<body>
-	
-	    <div id="header">
-	        <table class="plc">
-                <tr>
-                    <td id="logo">Turnt</td>
-                    <td class="links">
-                        <div class="section">
-                            <a href="#host">Host</a>
-                        </div>
-                        <div class="section">
-                		    <a href="#partyList">Parties</a>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-             
-		<div id="register">
-		</div>
-			</div>
-	        <a>Put informative shit here.</a>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
+    <script src="script/app.js"></script>
+</head>
+<body>
 
-        <!-- don't edit the shit in this div -->
-        <div>
-            <ng-view></ng-view>
-        </div>
-<<<<<<< HEAD
-		
-		<script type="text/javascript" src="thing.js"></script>
-		
-		<script type="text/javascript">
-		Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
-		var currentUser = Parse.User.current();
-		if (currentUser) {
-			document.getElementById("register").innerHTML = '<a href="#account">Account</a>';
-		}
-		else {
-			document.getElementById("register").innerHTML = '<a href="#login">Sign In</a>';
-		}
-		</script>
-=======
->>>>>>> dc0abc6ad883cc3297479ac2dfb2be7ee12b8d35
-	</body>
+<div id="header">
+    <table class="plc">
+        <tr>
+            <td id="logo">Turnt</td>
+            <td class="links">
+                <div class="section">
+                    <a href="#host">Host</a>
+                </div>
+                <div class="section">
+                    <a href="#partyList">Parties</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div id="register">
+    </div>
+</div>
+
+<div>
+    <ng-view></ng-view>
+</div>
+
+<!-- small js code just for the top right button -->
+<script type="text/javascript">
+    Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+        document.getElementById("register").innerHTML = '<a href="#account">Account</a>';
+    }
+    else {
+        document.getElementById("register").innerHTML = '<a href="#login">Sign In</a>';
+    }
+</script>
+
+</body>
 </html>

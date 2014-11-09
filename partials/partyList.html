@@ -1,5 +1,11 @@
 <div ng-controller="" id="parties">
     <div class="" id="partyPanel" ng-repeat="party in parties">
-
+        Owner      : {{party.Owner}}
+        Time       : {{party.Month}}/{{party.Day}}/{{party.Year}}
+        Funding    : {{party.currentFunding}}/{{party.Cost}}
+        Location   : {{party.Location}}
+        Description: {{party.Description}}
+        Created At : {{party.createdAt}}
+        Updated At : {{party.updatedAt}}
     </div>
 </div>
