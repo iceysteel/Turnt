@@ -1,3 +1,18 @@
-<div>
-    <h1>THIS IS THE ACCOUNT PAGE</h1>
+<div ng-controller="accountController" id="account">
+    <div class="account">
+        Username : {{username}}
+        Email: {{email}}
+        Friends
+        <div id="friendList">
+        </div>
+    </div>
+
+    <div class="friendSearch">
+        <div class="inp">
+            Search for friends: <input id="friend" type="text" data-ng-model="friendName"><br>
+        </div>
+        <a class="inp" ng-click="searchForFriends">Search</a>
+
+        <div class="inp" id="results" data-ng-model="results"></div>
+    </div>
 </div>

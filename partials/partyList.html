@@ -1,8 +1,8 @@
 <div ng-controller="partyListController" id="parties">
     <div class="create loginpane">
         <h1>Login</h1>
-        <button onclick="getData()">Party Data</button>
+        <button ng-click="getData">Party Data</button>
 
-        <div id="partydata"> </div>
+        <div id="partyData" data-ng-model="partydata"> </div>
     </div>
 </div>
