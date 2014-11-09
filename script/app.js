@@ -72,25 +72,11 @@ angular.module('app', ['ngRoute'])
 
     }])
     .controller('hostController', ['$scope', 'hostFactory', '$location', function ($scope, hostFactory, $location) {
-        Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
-
-        var currentUser = Parse.User.current();
-        if (currentUser) {
-
-        }
-        else {
-            $location.path('/login');
-        }
-
         $scope.hostEvent = function () {
             var Event = Parse.Object.extend("Parties");
             var party = new Event();
             var user = Parse.User.current();
-            user.fetch().then(function (fetchedUser) {
-                var name = fetchedUser.getUsername();
-            }, function (error) {
-                //Handle the error
-            });
+            var name = user.getUsername();
 
             party.set("Location", $scope.loc);
             party.set("Year", $scope.yr);
@@ -109,6 +95,21 @@ angular.module('app', ['ngRoute'])
                     alert('Failed to create new object, with error code: ' + error.message);
                 }
             });
+        };
+
+        $scope.isNumber = function (evt)
+        {
+            return (event.charCode >= 48 && event.charCode <= 57);
+        };
+
+        Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
+
+        var currentUser = Parse.User.current();
+        if (currentUser) {
+
+        }
+        else {
+            $location.path('/login');
         }
     }])
     .controller('accountController', ['$scope', 'accountFactory', function ($scope, accountFactory) {
@@ -177,7 +178,7 @@ angular.module('app', ['ngRoute'])
 
             // show the party list using ng repeat -R
 
-            // current test code
+            // temporary code
             Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
             var pty = Parse.Object.extend("Parties");
             var query = new Parse.Query(pty);
@@ -198,32 +199,30 @@ angular.module('app', ['ngRoute'])
             var user = new Parse.User();
             Parse.User.logIn($scope.uname, $scope.password, {
                 success: function (user) {
-                    $location.path('/home');
+                    $location.path('/partyList');
                 },
                 error: function (user, error) {
                     alert("Error: " + error.code + " " + error.message);
                 }
             });
-        }
+        };
     }])
     .controller('registerController', ['$scope', 'registerFactory', '$location', function ($scope, registerFactory, $location) {
-        $scope.register = function () {
+        $scope.userRegister = function () {
             Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
             var user = new Parse.User();
-            user.set("username", $scope.uname);
-            user.set("password", $scope.password);
-            user.set("email", scope.email);
+            user.set("username", $scope.userName);
+            user.set("password", $scope.userPass);
+            user.set("email", $scope.userEmail);
 
-            // other fields can be set just like with Parse.Object
             user.signUp(null, {
                 success: function (user) {
-                    $location.path('/home')
+                    $location.path('/partyList')
                 },
                 error: function (user, error) {
-                    // Show the error message somewhere and let the user try again.
                     alert("Error: " + error.code + " " + error.message);
                 }
             });
-        }
+        };
     }])
 ;
