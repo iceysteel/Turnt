@@ -1,11 +1,14 @@
 <div ng-controller="partyListController" id="parties">
-    <div id="partyPanel" ng-repeat="party in parties">
-        Owner      : {{party.Owner}}
-        Time       : {{party.Month}}/{{party.Day}}/{{party.Year}}
-        Funding    : {{party.currentFunding}}/{{party.Cost}}
-        Location   : {{party.Location}}
-        Description: {{party.Description}}
-        Created At : {{party.createdAt}}
-        Updated At : {{party.updatedAt}}
+    <div id="partyPanel" ng-repeat="party in parties" >
+        {{party}}
+        Owner      : {{party.Owner}}<br>
+        Time       : {{party.Month}}/{{party.Day}}/{{party.Year}}<br>
+        Funding    : {{party.currentFunding}}/{{party.Cost}}<br>
+        Location   : {{party.Location}}<br>
+        Description: {{party.Description}}<br>
+        Created At : {{party.createdAt}}<br>
+        Updated At : {{party.updatedAt}}<br>
+
+        <a class="inp" ng-click="goToDetails(party)">Details</a>
     </div>
 </div>

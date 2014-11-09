@@ -1,3 +1,7 @@
-<div ng-controller="">
-    <h1>THIS IS THE PARTY DETAILS PAGE</h1>
+<div ng-controller="partyDetailsController" id="partyDetails">
+    <div>
+        {{$scope.party}}
+    </div>
+
+    <a class="inp" ng-click="pledge()">Back this party and TurnUP!!</a>
 </div>

@@ -2,6 +2,8 @@
  * Created by MuhammadRizky on 11/8/2014.
  */
 
+var tempVar;
+
 angular.module('app', ['ngRoute'])
 /**
  * config
@@ -32,6 +34,10 @@ angular.module('app', ['ngRoute'])
                 templateUrl: 'partials/partyList.html',
                 controller: 'partyListController'
             })
+            .when('/partyDetails', {
+                templateUrl: 'partials/partyDetails.html',
+                controller: 'partyDetailsController'
+            })
             .otherwise({redirectTo: '/'})
     }])
 
@@ -53,7 +59,7 @@ angular.module('app', ['ngRoute'])
 
         // return an array of parties object -R
     }])
-    .factory('partyDetailFactory', ['$http', function ($http) {
+    .factory('partyDetailsFactory', ['$http', function ($http) {
         // call parse and look for the specific parties -R
 
         // return the party object
@@ -179,7 +185,7 @@ angular.module('app', ['ngRoute'])
             alert('removed ' + username);
         };
     }])
-    .controller('partyListController', ['$scope', 'partyListFactory', function ($scope, partyListFactory) {
+    .controller('partyListController', ['$scope', 'partyListFactory', '$location', '$routeParams', function ($scope, partyListFactory, $location, $routeParams) {
         $scope.parties = [];
 
         Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
@@ -198,6 +204,11 @@ angular.module('app', ['ngRoute'])
 
             }
         });
+
+        $scope.goToDetails = function (party) {
+            tempVar = party;
+            $location.url('/partyDetails');
+        };
     }])
     .controller('loginController', ['$scope', 'loginFactory', '$location', '$routeParams', function ($scope, loginFactory, $location, $routeParams) {
         $scope.signIn = function () {
@@ -231,5 +242,14 @@ angular.module('app', ['ngRoute'])
                 }
             });
         };
+    }])
+    .controller('partyDetailsController', ['$scope', 'partyDetailsFactory', function ($scope, partyDetailsFactory) {
+        $scope.party = tempVar;
+
+        console.log($scope.party);
+
+        $scope.pledge = function () {
+
+        }
     }])
 ;
