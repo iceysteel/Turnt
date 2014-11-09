@@ -43,7 +43,7 @@
 {
     background-color: #2cc36b;
 }
-#register
+#register, #login
 {
     float: right;
     margin-top: -60px;
