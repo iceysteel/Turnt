@@ -2,6 +2,7 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$/index.html" libraries="{parse-1.3.1}" />
+    <file url="file://$PROJECT_DIR$/partials/partyDetails.html" libraries="{checkout}" />
     <file url="PROJECT" libraries="{angular, angular-animate, angular-route, jquery}" />
     <includedPredefinedLibrary name="Node.js Globals" />
     <includedPredefinedLibrary name="WebGL" />

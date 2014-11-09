@@ -209,6 +209,55 @@ angular.module('app', ['ngRoute'])
             tempVar = party;
             $location.url('/partyDetails');
         };
+
+        $scope.getParty = function (partyId){
+            Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
+            var pty = Parse.Object.extend("Parties");
+            var query = new Parse.Query(pty);
+            query.get(partyId, {
+                success: function(pty) {
+                    console.log(pty);
+                    return(pty);
+
+                },
+                error: function(pty, error) {
+                    alert("ERROR");
+                }
+            });
+
+        };
+
+
+        $scope.getArray = function getArray(){
+            Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
+
+            //get party object
+
+            //get array and push party object into array
+
+            var currentUser = Parse.User.current();
+            if(currentUser.get("PartyArray") == null){
+                var prtyArray = [];
+            }
+
+
+            prtyArray.push("rlF4ESEDL7");
+
+            currentUser.set("PartyArray", prtyArray);
+
+            //save array
+
+            currentUser.save(null, {
+                success: function(currentUser) {
+                    // Now let's update it with some new data. In this case, only cheatMode and score
+                    // will get sent to the cloud. playerName hasn't changed.
+                    //currentUser.set("PartyArray", prtyArray);
+                    currentUser.save();
+                }
+            });
+
+
+        }
     }])
     .controller('loginController', ['$scope', 'loginFactory', '$location', '$routeParams', function ($scope, loginFactory, $location, $routeParams) {
         $scope.signIn = function () {
