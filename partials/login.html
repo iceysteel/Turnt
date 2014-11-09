@@ -15,24 +15,8 @@
                 <a class="inp" href="#register">Register</a>
             </td>
             <td>
-                <a class="inp" ng-click="signIn">Sign In</a>
+                <a class="inp" onclick="signIn()">Sign In</a>
             </td>
         </tr>
     </table>
-	
-	<script type="text/javascript">
-        function signIn()
-        {
-            Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
-            var user = new Parse.User();
-            Parse.User.logIn(document.getElementById('uname').value, document.getElementById('password').value, {
-              success: function(user) {
-                window.location = ""; //go to p;a
-              },
-              error: function(user, error) {
-                alert("Error: " + error.code + " " + error.message);
-              }
-            });
-        }
-    </script>
 </div>

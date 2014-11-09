@@ -31,11 +31,7 @@
         var currentUser = Parse.User.current();
 		document.getElementById("username").innerHTML = "Username: " + currentUser.getUsername();
 		document.getElementById("email").innerHTML = "Email: " + currentUser.getEmail();
-		listFriends();
-		
-		function listFriends(){
-			document.getElementById("friendList").innerHTML = 'friend A </br> friend B </br>';
-		}
+	
 		
 		function searchForFriends()
         {
@@ -54,7 +50,7 @@
 					// Do something with the returned Parse.Object values
 					if (results.length > 0){
 						for (var i = 0; i < results.length; i++) { 
-							var object = results[i];
+							var object = results[0];
 							username = object.get('username');
 							//id = object.get('objectId');
 							document.getElementById("results").innerHTML = username + '<a class="inp" onClick="addFriend(\'' + username + '\')">Add</a>';	
