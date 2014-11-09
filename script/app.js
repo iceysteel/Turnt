@@ -39,11 +39,11 @@ angular.module('app', ['ngRoute'])
  * factories
  */
     .factory('homeFactory', ['$http', function ($http) {
-
+        // for future devs.
     }])
 
     .factory('hostFactory', ['$http', function ($http) {
-
+        // for future devs.
     }])
     .factory('accountFactory', ['$http', function ($http) {
 
@@ -59,10 +59,10 @@ angular.module('app', ['ngRoute'])
         // return the party object
     }])
     .factory('loginFactory', ['$http', function ($http) {
-
+        // for future devs.
     }])
     .factory('registerFactory', ['$http', function ($http) {
-
+        // for future devs.
     }])
 
 /**
@@ -120,7 +120,6 @@ angular.module('app', ['ngRoute'])
 
         $scope.listFriends = function(){
             // will be developed,when we got friend list array
-            document.getElementById("friendList").innerHTML = 'friend A </br> friend B </br>';
             // call the factories and get a list of parties available from friends
         };
 
@@ -136,7 +135,6 @@ angular.module('app', ['ngRoute'])
 
                 query.find({
                     success: function(results) {
-                        // Do something with the returned Parse.Object values
                         if (results.length > 0){
                             for (var i = 0; i < results.length; i++) {
                                 var object = results[i];
@@ -159,10 +157,21 @@ angular.module('app', ['ngRoute'])
         };
 
         $scope.addFriend = function(username){
-            // still error, returns nothing -M
             var user = Parse.User.current();
-            var relation = user.relation("Friends");
-            alert('added ' + username);
+            var friends = user.get('FriendUsers');
+            if (! friends){
+                friends = [friend];
+            }
+            else {
+                friends.push(friend);
+            }
+            user.save(null, {
+                success: function(user) {
+                    user.set("FriendUsers", friends);
+                    user.save();
+                }
+            });
+            //alert('added ' + friend.get('username'));
         };
 
         $scope.removeFriend = function (username){
