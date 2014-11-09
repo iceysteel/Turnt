@@ -25,10 +25,11 @@ friends.forEach(function(friend)
                     {
                         ptys.forEach(function(pty)
                         {
-                            document.getElementById("friendParty").innerHTML += "<div class=\"inp\"><a>Owner: " + pty.get('Owner') + "<br>" + "Location: " + pty.get('Location') + "<br>" + "Date: " + pty.get('Month') + " " + pty.get('Day') + ", " + pty.get('Year') + "<br>" + "Pledge: " + pty.get('Cost') + "</a></div>";
+                            document.getElementById("friendParty").innerHTML += "<div class=\"inp\"><a>Owner: " + pty.get('Owner') + "<br>" + "Location: " + pty.get('Location') + "<br>" + "Date: " + pty.get('Month') + " " + pty.get('Day') + ", " + pty.get('Year') + "<br>" + "Pledge: " + pty.get('Cost') + "</a></div>" + "<a class='inp' ng-click='goToDetails(party)'>Details</a>";
                             //document.getElementById("friendParty").innerHTML += "Location: " + pty.get('Location') + "<br>";
                             //document.getElementById("friendParty").innerHTML += "Date: " + pty.get('Month') + " " + pty.get('Day') + ", " + pty.get('Year') + "<br>";
                             //document.getElementById("friendParty").innerHTML += "Pledge: " + pty.get('Cost') + "</a></div>";
+
                         });
                     },
                     error: function(ptys, error) 
