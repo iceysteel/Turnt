@@ -71,7 +71,7 @@ angular.module('app', ['ngRoute'])
     .controller('homeController', ['$scope', 'homeFactory', function ($scope, homeFactory) {
 
     }])
-    .controller('hostController', ['$scope', 'hostFactory', function ($scope, hostFactory) {
+    .controller('hostController', ['$scope', 'hostFactory', '$location', function ($scope, hostFactory, $location) {
         Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
 
         var currentUser = Parse.User.current();
@@ -79,7 +79,7 @@ angular.module('app', ['ngRoute'])
 
         }
         else {
-            window.location = "login.html";
+            $location.path('/login');
         }
 
         $scope.hostEvent = function () {

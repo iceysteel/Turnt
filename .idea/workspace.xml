@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6464886-5438-4ff5-983d-b23cda292ded" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/partials/nohup.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/parties.html" afterPath="$PROJECT_DIR$/partials/parties.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/app.js" afterPath="$PROJECT_DIR$/script/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/partyList.html" afterPath="$PROJECT_DIR$/partials/partyList.html" />
     </list>
     <ignored path="Turnt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24921466" vertical-offset="0" max-vertical-offset="2805">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            <state vertical-scroll-proportion="-25.0" vertical-offset="1527" max-vertical-offset="2805">
+              <caret line="131" column="44" selection-start-line="131" selection-start-column="44" selection-end-line="131" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -61,6 +61,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="629">
               <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="partyList.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/partials/partyList.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.14639397" vertical-offset="0" max-vertical-offset="929">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -81,16 +91,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="136">
               <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="850">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -156,8 +156,9 @@
         <option value="$PROJECT_DIR$/partials/account.html" />
         <option value="$PROJECT_DIR$/partials/partyDetails.html" />
         <option value="$PROJECT_DIR$/partials/home.html" />
-        <option value="$PROJECT_DIR$/script/app.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/script/app.js" />
+        <option value="$PROJECT_DIR$/partials/partyList.html" />
       </list>
     </option>
   </component>
@@ -595,14 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/partyList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="238">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="23.76923" vertical-offset="992" max-vertical-offset="1921">
@@ -615,14 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="850">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/parties.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="955">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -685,8 +670,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24921466" vertical-offset="0" max-vertical-offset="2805">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state vertical-scroll-proportion="-25.0" vertical-offset="1527" max-vertical-offset="2805">
+          <caret line="131" column="44" selection-start-line="131" selection-start-column="44" selection-end-line="131" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/parties.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="955">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/partyList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14639397" vertical-offset="0" max-vertical-offset="929">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
