@@ -79,10 +79,10 @@ angular.module('app', ['ngRoute'])
             var name = user.getUsername();
 
             party.set("Location", $scope.loc);
-            party.set("Year", $scope.yr);
-            party.set("Month", $scope.mo);
-            party.set("Day", $scope.day);
-            party.set("Cost", $scope.co);
+            party.set("Year", Number($scope.yr));
+            party.set("Month", Number($scope.mo));
+            party.set("Day", Number($scope.day));
+            party.set("Cost", Number($scope.co));
             party.set("Owner", name);
             party.save(null, {
                 success: function (party) {
