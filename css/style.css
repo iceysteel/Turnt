@@ -113,7 +113,17 @@ option
     border-radius: 15px;
     background-clip: fit-content;
 }
+
+.section a
+{
+    color: white;
+    text-decoration: none;
+}
 body
 {
     font-family: Noto Sans UI, Open Sans, sans-serif;
+}
+#parties
+{
+    margin-top: 128px;
 }
