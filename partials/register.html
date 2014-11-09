@@ -1,21 +1,20 @@
-<div class="create loginpane">
-    <script src="../script/register.js"></script>
+<div class="create loginpane" ng-controller="registerController" id="register">
 
     <h1>Register</h1>
 
     <div class="inp">
-        Email: <input id="email" type="email"><br>
+        Email: <input id="email" type="email" data-ng-model="email"><br>
     </div>
     <div class="inp">
-        Username: <input id="uname" type="text"><br>
+        Username: <input id="uname" type="text" data-ng-model="uname"><br>
     </div>
     <div class="inp">
-        Password: <input id="password" type="password"><br>
+        Password: <input id="password" type="password" data-ng-model="password"><br>
     </div>
     <table>
         <tr>
             <td>
-                <a class="inp" onclick="Register()">Register</a>
+                <a class="inp" ng-click="register">Register</a>
             </td>
         </tr>
     </table>

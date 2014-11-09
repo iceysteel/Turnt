@@ -1,21 +1,21 @@
-<div class="create loginpane" ng-controller="" id="login">
+<div class="create loginpane" ng-controller="loginController" id="login">
     <script src="../script/login.js"></script>
 
     <h1>Login</h1>
 
     <div class="inp">
-        Username: <input id="uname" type="text"><br>
+        Username: <input id="uname" type="text" data-ng-model="uname"><br>
     </div>
     <div class="inp">
-        Password: <input id="password" type="password"><br>
+        Password: <input id="password" type="password" data-ng-model="password"><br>
     </div>
     <table>
         <tr>
             <td>
-                <a class="inp" href="register.html">Register</a>
+                <a class="inp" href="#register">Register</a>
             </td>
             <td>
-                <a class="inp" onclick="SignIn()">Sign In</a>
+                <a class="inp" ng-click="signIn">Sign In</a>
             </td>
         </tr>
     </table>
