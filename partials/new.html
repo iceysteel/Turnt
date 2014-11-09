@@ -38,8 +38,10 @@
 				//get array and push party object into array
 				
 				var currentUser = Parse.User.current();
-				
-						var prtyArray = [];
+				        if(currentUser.get("PartyArray") == null){
+                            var prtyArray = [];
+                        }
+						
 						
 						prtyArray.push("rlF4ESEDL7");
 						
