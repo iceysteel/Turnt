@@ -48,7 +48,8 @@ function logout()
 Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
 var currentUser = Parse.User.current();
 if (currentUser) {
-    // do stuff with the user
 } else {
     window.location = "#login"
 }
+
+

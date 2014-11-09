@@ -48,7 +48,37 @@ function logout()
 Parse.initialize("jvpZoE593I9616TtmoVX9qMzs9DYXVlfa6rudZ6P", "v1ySlxINSYW6OL1aKo7YZV7i4SjvG4D7Th2fhhWU");
 var currentUser = Parse.User.current();
 if (currentUser) {
-    // do stuff with the user
 } else {
     window.location = "#login"
 }
+
+friends = "Friends ▼";
+var friendlist = currentUser.get('FriendUsers');
+
+friendlist.forEach(function(userid)
+{
+    var query = new Parse.Query(Parse.User);
+    query.equalTo("objectId", userid);
+    query.find(
+    {
+        success: function(objs)
+        {
+        
+            objs.forEach(function(results) 
+            {
+                
+                friends = friends + "" + results.get('username');
+            });
+        },
+        error: function(testObject, error)
+        {
+        
+        }
+    });
+});
+window.onload = function()
+{
+    document.getElementById('friendlist').innerHTML=friends;
+}
+    
+

@@ -11,8 +11,8 @@
         <div class="inp">
             Search for friends: <input id="friend" type="text" data-ng-model="friendName"><br>
         </div>
-        <a class="inp" onclick="addaFriend()">Search</a>
-
-        <a class="inp" onclick="logout()">Log Out</a>
+        <a class="inp oup" onclick="">Search</a>
+        <a class="inp oup" onclick="logout()">Log Out</a>
+        <div class="inp oup" id="fs" onclick=""><a></a></div>
     </div>
 </div>
